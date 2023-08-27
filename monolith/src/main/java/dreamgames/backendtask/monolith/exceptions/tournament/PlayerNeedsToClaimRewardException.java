@@ -1,0 +1,12 @@
+package dreamgames.backendtask.monolith.exceptions.tournament;
+
+import org.springframework.http.HttpStatus;
+import org.springframework.web.bind.annotation.ResponseStatus;
+
+@ResponseStatus(code = HttpStatus.CONFLICT, reason = "Player needs to claim their reward.")
+public class PlayerNeedsToClaimRewardException extends RuntimeException {
+
+        public PlayerNeedsToClaimRewardException(String username) {
+            super("Player with username " + username + " needs to claim their reward.");
+        }
+}

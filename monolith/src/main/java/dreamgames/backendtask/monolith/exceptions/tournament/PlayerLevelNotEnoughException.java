@@ -1,0 +1,12 @@
+package dreamgames.backendtask.monolith.exceptions.tournament;
+
+import org.springframework.http.HttpStatus;
+import org.springframework.web.bind.annotation.ResponseStatus;
+
+@ResponseStatus(code = HttpStatus.PRECONDITION_FAILED, reason = "Player does not have enough level.")
+public class PlayerLevelNotEnoughException extends RuntimeException {
+
+        public PlayerLevelNotEnoughException(String username) {
+            super("Player with username " + username + " does not have enough level to compete.");
+        }
+}
